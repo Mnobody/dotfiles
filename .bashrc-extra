@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# in your .bashrc:   source $HOME/.bashrc-extra
+
+############################# alias ################################################################
+
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+alias nv='nvim .'
+alias tm='tmux'
+
+############################# tmux sessionizer #####################################################
+
+bind -x '"\C-f":tmux-sessionizer'
+
+############################# starship.rs ##########################################################
+
+eval "$(starship init bash)"
+
+############################# timer ################################################################
+
+timer () {
+    ~/.local/bin/timer $1
+}
+
+############################# time tracker #########################################################
+
+source $HOME/.config/rtw/bashrc.sh
