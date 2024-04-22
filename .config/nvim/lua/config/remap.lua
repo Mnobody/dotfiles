@@ -49,3 +49,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 vim.keymap.set('n', '<leader>jq', ':%!jq .<cr>') -- format json file - expand collapsed json
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<cr>')
 vim.keymap.set('n', '<C-s>', '<cmd>:w<cr>')
+
+vim.keymap.set('v', '<C-i>', '<C-a>') -- increment number list
+vim.keymap.set('v', '<C-d>', '<C-x>') -- decrement number list
