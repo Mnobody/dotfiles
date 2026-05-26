@@ -1,5 +1,8 @@
+[general]
 import = [
-    "~/.config/alacritty/catppuccin-mocha.toml"
+    # "~/.config/alacritty/catppuccin-mocha.toml"
+    # "~/.config/alacritty/gotham-default.toml"
+    "~/.config/alacritty/rose-pine.toml"
 ]
 
 [font.normal]
@@ -17,14 +20,3 @@ style = "Italic"
 [font.bold_italic]
 family = "JetBrainsMono Nerd Font Mono"
 style = "Bold Italic"
-
-[window.dimensions]
-columns = 130
-lines = 45
-
-[window.padding]
-x = 5
-y = 5
-
-# [window]
-# opacity = 0.97
