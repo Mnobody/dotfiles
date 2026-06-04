@@ -1,13 +1,4 @@
--- [[ Setting options ]]
--- See `:help vim.o`
-
--- Set highlight on search
-vim.o.hlsearch = false
-vim.opt.incsearch = true
-
--- Make line numbers default
---vim.wo.number = true
-vim.opt.nu = true
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
@@ -24,34 +15,51 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
 vim.opt.undofile = true
 
+-- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 8
 vim.opt.isfname:append('@-@')
 
 vim.opt.colorcolumn = '120'
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.opt.mouse = 'a'
 
 -- Enable break indent
-vim.o.breakindent = true
+vim.opt.breakindent = true
 
 -- Save undo history
-vim.o.undofile = true
+vim.opt.undofile = true
 
 -- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Decrease update time
-vim.o.updatetime = 50
-vim.wo.signcolumn = 'yes'
+vim.opt.updatetime = 50
+vim.opt.signcolumn = 'yes'
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.opt.completeopt = 'menuone,noselect'
+
+-- Set highlight on search
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
 
 vim.opt.list = true
-vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append 'space:⋅'
 
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 vim.opt.spelloptions = 'camel'
+
+-- To ALWAYS use the clipboard for ALL operations (instead of interacting
+-- with the "+" and/or "*" registers explicitly)
+vim.opt.clipboard = 'unnamedplus'
+
+vim.opt.termguicolors = true
+
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = 'both'
+
+-- Set the default border for all floating windows
+vim.opt.winborder = 'rounded'

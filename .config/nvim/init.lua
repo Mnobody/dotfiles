@@ -1,5 +1,6 @@
-require('config')
-require('plugin')
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+require('config.set')
+require('config.remap')
+require('config.highlight-yank')
+require('config.lsp')
+require('config.diagnostic')
+require('lazy.lazy')

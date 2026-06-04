@@ -1,13 +1,12 @@
--- [[ Basic Keymaps ]]
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+-- Set <space> as the leader key. See `:help mapleader`
+-- NOTE: Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeFindFile)
-vim.keymap.set('n', '<leader>ct', vim.cmd.NvimTreeToggle)
+vim.keymap.set('n', '<leader>cd', vim.cmd.Ex)
+-- vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeFindFile)
+-- vim.keymap.set('n', '<leader>ct', vim.cmd.NvimTreeToggle)
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
@@ -42,13 +41,18 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 vim.keymap.set('n', '<leader>jq', ':%!jq .<cr>') -- format json file - expand collapsed json
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<cr>')
 vim.keymap.set('n', '<C-s>', '<cmd>:w<cr>')
 
-vim.keymap.set('v', '<C-i>', '<C-a>') -- increment number list
-vim.keymap.set('v', '<C-d>', '<C-x>') -- decrement number list
+-- Clear highlights on search when pressing <Esc> in normal mode
+-- See `:help hlsearch`
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- todo: remap tmux leader
+-- vim.keymap.set('v', '<C-i>', '<C-a>') -- increment number list
+-- vim.keymap.set('v', '<C-d>', '<C-x>') -- decrement number list
